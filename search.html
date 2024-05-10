@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+   
+    .search-input-container {
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+      
+    }
+    .search-input {
+
+       
+      
+       display: flex;
+    justify-content: center;
+    align-items: center;
+    
+      max-width: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding-right: 30px;
+    }
+
+    .search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+   
+    .clear-input:hover {
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+   margin: 0 auto;
+      text-align: center;
+    }
+    .resume-card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      gap: 5px;
+      margin: 0 auto;
+      
+     
+    }
+
+
+    .resume-card1 {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 30px;
+      margin-bottom: 20px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      display: none;
+      
+    }
+
+    .resume-cardname{
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      gap: 5px;
+      background-color: aquamarine;
+    }
+
+    .applicant-info{
+        padding: 10px;
+       
+    }
+    .applicant-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .applied-for {
+      margin-bottom: 10px;
+    }
+    .personal-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .technical-skills {
+      text-align: left;
+    }
+    .skill-list {
+      margin-top: 5px;
+      list-style: none;
+      padding-left: 0;
+    }
+    .skill-item {
+      margin-bottom: 5px;
+    }
+    .icon {
+    
+      font-size: 60px;
+      color: #007bff;
+      
+  position: absolute;
+  top: 50%; 
+  right: 0; 
+  transform: translateY(-50%); 
+
+      
+    }
+
+    .work-experience {
+      flex: 1; 
+      text-align: left; 
+ 
+    }
+    .work-experience-item {
+      margin-bottom: 20px;
+      text-align: left;
+      float: left;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      
+    }
+    .divide{
+        display: flex ;
+       
+        gap: 0px;
+    }
+    .left, .right{
+        flex: 1;
+       
+    }
+
+    .left{
+      background-color: pink;
+      flex:0.5;
+      padding: 10px;
+      margin: 10px;
+      height: 30rem;
+      
+    }
+    .head{
+      background-color: #999;
+    }
+
+    .container-resume {
+    display: none; 
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.next-button{
+  padding: 10px;
+  margin-left: auto;
+  
+
+  
+}
+
+.search-button{
+  padding: 10px;
+}
+
+.back-button{ 
+  padding: 10px;
+  margin-right: auto;
+   
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+   
+    
+      <div class="search-input-container">
+        <button id="backButton" style="visibility: hidden;" class="back-button" onclick="previousPage()">Back</button>
+        <div class="search-container">
+            <input class="search-input" type="text" id="searchInput" placeholder="Search for keywords">
+            <button class="search-button" onclick="search()">Search</button>
+        </div>
+        <button id="nextButton" style="visibility: hidden; " class="next-button" onclick="nextPage()">Next</button>
+    </div>
+        
+        <div class="resume-card1" id="resumeCard">
+          <div class="applicant-info" id="noResult">
+            <div >No such  result found</div>
+            
+          </div>
+          <span class="icon">😞</span>
+        </div>
+
+       
+
+
+      <div class="container-resume" id="resumeContainer">
+
+        <div class="resume-cardname" id="resumeCard">
+          <div class="applicant-info">
+            <div id="name" class="applicant-name"></div>
+            <div id="appliedFor" class="applied-for"></div>
+          </div>
+          <span class="icon">&#128100;</span>
+        </div>
+        
+      </div>
+    </div>
+    
+    <script src="resume.js" ></script>
+</body>
+</html>
