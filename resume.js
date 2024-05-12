@@ -109,20 +109,14 @@ function populateResume(data) {
 
 
     resumeCard.innerHTML = `
-    
-
-
-        
-        
-    <div class="resume-cardname" id="resumeCard">
+         <div class="resume-cardname" id="resumeCard">
         <div class="applicant-info">
           <div id="name" class="applicant-name">${data.basics.name}</div>
           <div id="appliedFor" class="applied-for"><strong>Applied For</strong>:${data.basics.AppliedFor}</div>
         </div>
         <span class="icon1"><span class="icon"><i class="fa-solid fa-user"></i></span>
-        
+        </div>
 
-      </div>
       <div class="divide">
         <div class="left">
       <div class="technical-skills">
@@ -139,26 +133,16 @@ function populateResume(data) {
         <ul id="skillKeywords" class="skill-list">
         ${data.skills.keywords.map(skill => `<li>${skill}</li>`).join('')}
     </ul>
-        
-      </div>
+        </div>
 
-     
-
-      <div class="technical-skills">
+     <div class="technical-skills">
         <h3 class="head">Hobbies</h3>
-     
-
           <ul id="skill-list" class="skill-list">
           ${data.interests.hobbies.map(hobby => `<li>${hobby}</li>`).join('')}
       </ul>
       </div>
       </div>
 
-
-
-    
-
-     
 <div class="right">
     <div class="work-experience">
         <h3>Work Experience</h3>
@@ -205,22 +189,16 @@ function populateResume(data) {
 
       <div class="work-experience">
         <h3>Achievements</h3>
-        
+
             <ul id="educationList">
                 <li id="Achievements">${data.achievements.Summary}</li>
-              
-              </ul>
-         
-      </div>
-
-     
-   </div>
+            </ul>
+         </div>
+    </div>
   </div>
   
     `;
-
-
-    document.getElementById('resumeContainer').appendChild(resumeCard);
+   document.getElementById('resumeContainer').appendChild(resumeCard);
 }
 
 
