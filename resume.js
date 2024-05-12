@@ -1,6 +1,36 @@
 let searchResults = [];
 let currentPage = 0;
 const resultsPerPage = 1;
+
+
+document.getElementById("clearButton").style.display = 'none';
+
+
+
+function handleInput() {
+
+    var input = document.getElementById("searchInput");
+    var clearButton = document.getElementById("clearButton");
+
+    if (input.value !== "") {
+
+        clearButton.style.display = "block";
+    } else {
+        clearButton.style.display = "none";
+    }
+}
+
+document.getElementById("clearButton").addEventListener("click", function () {
+    document.getElementById("searchInput").value = "";
+    this.style.display = "none";
+});
+
+function handleKeyPress(event) {
+
+    if (event.key === "Enter" && document.getElementById("searchInput").value.trim() !== "") {
+        search();
+    }
+}
 function search() {
     fetch('resume.json')
         .then(response => {
@@ -15,11 +45,15 @@ function search() {
             if (searchResults.length > 0) {
                 currentPage = 0;
                 showResults();
+
             } else {
 
                 document.getElementById('name').textContent = 'No results found.';
                 document.getElementById('resumeCard').style.display = 'block';
                 document.getElementById('resumeContainer').style.display = 'none';
+                document.getElementById('nextButton').style.visibility = 'hidden';
+                document.getElementById('backButton').style.visibility = 'hidden';
+
             }
         })
         .catch(error => {
@@ -45,13 +79,12 @@ function showResults() {
 
         document.getElementById('backButton').style.visibility = (currentPage > 0) ? 'visible' : 'hidden';
     } else {
+
         document.getElementById('name').textContent = 'No results found.';
-
-        document.getElementById('nextButton').style.visibility = 'hidden';
-        document.getElementById('backButton').style.visibility = 'hidden';
-
         document.getElementById('resumeCard').style.display = 'block';
         document.getElementById('resumeContainer').style.display = 'none';
+
+
     }
 }
 
@@ -84,9 +117,11 @@ function populateResume(data) {
     <div class="resume-cardname" id="resumeCard">
         <div class="applicant-info">
           <div id="name" class="applicant-name">${data.basics.name}</div>
-          <div id="appliedFor" class="applied-for">${data.basics.AppliedFor}</div>
+          <div id="appliedFor" class="applied-for"><strong>Applied For</strong>:${data.basics.AppliedFor}</div>
         </div>
-        <span class="icon">&#128100;</span>
+        <span class="icon1"><span class="icon"><i class="fa-solid fa-user"></i></span>
+        
+
       </div>
       <div class="divide">
         <div class="left">
@@ -95,7 +130,7 @@ function populateResume(data) {
         <ul class="skill-list">
             <li id="phone" class="skill-item">${data.basics.phone}</li>
             <li id="email" class="skill-item">${data.basics.email}</li>
-            <li id="profiles" class="skill-item"><div>LinkedIn: <a href="#">linkedin.com/johndoe</a></div></li>
+            <li id="profiles" class="skill-item"><div>LinkedIn:<a href="#"> ${data.basics.profiles.url}</a></div></li>
           </ul>
       </div>
 

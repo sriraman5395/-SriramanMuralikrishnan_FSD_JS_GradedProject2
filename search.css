@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.search-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-right: 30px;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.clear-input:hover {
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.resume-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+    margin: 0 auto;
+}
+
+
+.no-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: solid;
+}
+
+
+.resume-cardname {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+    background-color: aquamarine;
+}
+
+.applicant-info {
+    padding: 10px;
+}
+
+.applicant-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.applied-for {
+    margin-bottom: 10px;
+}
+
+.personal-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.technical-skills {
+    text-align: left;
+}
+
+.skill-list {
+    margin-top: 5px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-item {
+    margin-bottom: 5px;
+}
+
+.icon {
+
+    font-size: 60px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+}
+
+.icon1 {
+    font-size: 60px;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+}
+
+.work-experience {
+    flex: 1;
+    text-align: left;
+}
+
+.work-experience-item {
+    margin-bottom: 20px;
+    text-align: left;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.divide {
+    display: flex;
+    gap: 0px;
+}
+
+.left,
+.right {
+    flex: 1;
+}
+
+.left {
+    background-color: pink;
+    flex: 0.5;
+    padding: 10px;
+    margin: 10px;
+    height: 30rem;
+
+}
+
+.head {
+    background-color: #999;
+}
+
+.container-resume {
+    display: none;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.next-button {
+    padding: 10px;
+    margin-left: auto;
+
+
+
+}
+
+.search-button {
+    padding: 10px;
+}
+
+.back-button {
+    padding: 10px;
+    margin-right: auto;
+
+}
+
+.clear-button {
+
+    position: relative;
+    left: 90px;
+
+    cursor: pointer;
+
+
+    display: none;
+}
