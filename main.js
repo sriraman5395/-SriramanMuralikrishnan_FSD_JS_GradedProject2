@@ -60,6 +60,8 @@ function validation() {
 }
 
 function submitForm(username, password) {
+  localStorage.setItem("Username", username);
+  localStorage.setItem("Password", password);
   
   const searchQuery = `?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
   window.location.replace(`search.html${searchQuery}`);
